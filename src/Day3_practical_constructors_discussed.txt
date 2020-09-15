@@ -1,0 +1,136 @@
+Which class is a default super class for every class in java- java.lang.Object class.
+
+Predict the output:
+
+1.class X
+{
+    public X(int i)
+    {
+        System.out.println(1);
+    }
+}
+ 
+class Y extends X
+{
+    public Y()
+    {super(5);
+
+        System.out.println(2);
+	
+    }
+}
+Ans: Above program does not have main method hence we can not predict the output. However, if we assume that the object of class Y is instantiated, 
+Then the output will be 1,2. 
+--------------------------------------------------------------------
+2. public class A 
+{
+    public A()
+    {
+	super();
+        System.out.println(1);    
+ 	
+        System.out.println(2);
+    }
+}
+Ans: 1 and then 2
+--------------------------------------------------------------------
+3.class X
+{
+    private int m = 48;
+}
+ 
+class Y extends X
+{
+    void methodOfY()
+    {
+        System.out.println(m);
+    }
+}
+Ans: Compile error as the variable from parent class is PRIVATE
+--------------------------------------------------------------------
+4.class A
+{
+    void A()
+    {
+        System.out.println(1);
+    }
+}
+ 
+class B extends A
+{
+    void B()
+    {
+        A();
+    }
+}
+ 
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        new B().B();
+	//try below too
+	B obj=new B();
+	obj.B();
+    }
+}
+Ans: 1
+--------------------------------------------------------------------
+5.class M
+{
+    static
+    {	  System.out.println('A');    }
+ 
+    public M()
+    {       System.out.println('B');   }
+
+    {       System.out.println('C');   }
+}
+ 
+class N extends M
+{
+    static    {System.out.println('D');}
+ 
+    {	System.out.println('E');}
+ 
+    public N()
+    {      System.out.println('F');   }
+}
+ 
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        N n = new N();
+    }
+}
+
+Ans: First D will be printed, Then E, then B,F respectively
+--------------------------------------------------------------------
+6.
+class A
+{
+    int[] a = new int[5];
+ 
+    {
+        a[0] = 10;
+    }
+}
+
+public class MainClass extends A
+{
+    {
+        a = new int[5];
+    }
+ 
+    {
+        System.out.println(a[0]);
+    }
+ 
+    public static void main(String[] args)
+    {
+        MainClass main = new MainClass();
+    }
+}
+Ans: 0
+--------------------------------------------------------------------
