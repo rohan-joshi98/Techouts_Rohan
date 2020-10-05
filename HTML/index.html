@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New App</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h1 id="header">My new Apps Login Page</h1>
+    </div>
+    <div id="loginForm">
+      <form action="" method="POST">
+        <div>
+          <h3 id="formHeader">Log in</h3>
+          <input type="text" name="id" id="id" />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="pwd"
+            id="pwd"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          />
+        </div>
+        <a href="file:///Users/rohanjoshi/eclipse/HTML/logedin.html" id="submit"
+          ><input type="submit"
+        /></a>
+        <ol>
+          <li><h6>The password should contain 8 Characters</h6></li>
+          <li><h6>Atlease one Uppercase character</h6></li>
+          <li><h6>Atlease One Lowercase character</h6></li>
+          <li><h6>One spacial case character from "$","@","#"</h6></li>
+          <li><h6>Atlease one number</h6></li>
+        </ol>
+      </form>
+    </div>
+    <canvas> </canvas>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #id {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #pwd {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #submit {
+      }
+      #header {
+        border: 3px solid green;
+        color: darkslategrey;
+      }
+      #formHeader {
+        text-align: center;
+      }
+      #loginForm {
+        width: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      form {
+        border: 3px solid black;
+      }
+    </style>
+    <script src="canvas.js"></script>
+  </body>
+</html>

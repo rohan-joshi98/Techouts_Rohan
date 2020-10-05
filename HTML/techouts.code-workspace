@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "../../dev/trydjango/java/Petmate"
+	},
+	{
+		"path": "../../dev/trydjango/java"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {}
+}
