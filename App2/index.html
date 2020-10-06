@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #BOS {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #bosInfo {
+        width: 300px;
+      }
+      #NYC {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #nycInfo {
+        width: 300px;
+      }
+      #DC {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #dcInfo {
+        width: 300px;
+      }
+      #boslab {
+        right: 600px;
+      }
+      #nyclab {
+        right: 40px;
+      }
+      #dclab {
+        left: 40px;
+      }
+      #dest {
+        display: flex;
+      }
+      #bosImg1 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #bosImg2 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #bosImg3 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #nycImg1 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #nycImg2 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #nycImg3 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #dcImg1 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #dcImg2 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      #dcImg3 {
+        width: 300px;
+        height: 300px;
+        margin-left: 20px;
+      }
+      video {
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>
+        <h1
+          id="header"
+          onmouseover="javascript:mouseOver()"
+          onmouseout="javascript:mouseOut()"
+        >
+          Travel.Com
+        </h1>
+      </div>
+      <div id="dest">
+        <div id="boston">
+          <img src="../App2/images/BOS.jpeg" alt="" class="boston" id="BOS" />
+          <a href="javascript:addBosStyle()"><span>Boston</span></a>
+          <p id="bosInfo" hidden="true">
+            Boston is the capital and most populous city of the Commonwealth of
+            Massachusetts in the United States, and the 21st most populous city
+            in the United States
+          </p>
+          <div id="bosImages" hidden="true">
+            <img
+              src="../App2/images/boston/bos1.png"
+              alt="https://www.hiusa.org/wp-content/uploads/2020/04/Aerial-View-Boston-Osman-Rana-Unsplash-1000x550-compressor-778x446.jpg"
+              id="bosImg1"
+            />
+            <img
+              src="../App2/images/boston/bos2.png"
+              alt="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/Qf8CWVLExD5krY6J5RXRepIh9Ro=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/NHWUPIQUCVGVFHPPO2UNBZWZQE.png"
+              id="bosImg2"
+            />
+            <img
+              src="../App2/images/boston/bos3.jpg"
+              alt="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/boston/Skyline_KyleKlein_KKP_8750_HDR_78b5182a-2af7-4997-9774-25796a38066f.jpg"
+              id="bosImg3"
+            />
+          </div>
+        </div>
+
+        <div id="newyorkcity">
+          <img src="../App2/images/NYC.jpg" alt="" class="newyork" id="NYC" />
+          <a href="javascript:addNycStyle()"><span>New York</span></a>
+          <p id="nycInfo" hidden="true">
+            New York City comprises 5 boroughs sitting where the Hudson River
+            meets the Atlantic Ocean. At its core is Manhattan, a densely
+            populated borough that’s among the world’s major commercial,
+            financial and cultural centers.
+          </p>
+          <div id="nycImages" hidden="true">
+            <img
+              src="../App2/images/nyc/nyc1.jpg"
+              alt="https://imgs.6sqft.com/wp-content/uploads/2020/06/26105451/NYC-sunset-Lower-Manhattan.jpg"
+              id="nycImg1"
+            />
+            <img
+              src="../App2/images/nyc/nyc2.png"
+              alt="https://www.brickunderground.com/sites/default/files/styles/blog_primary_image/public/blog/images/49128283177_8db9e4d5e7_k_1.jpg"
+              id="nycImg2"
+            />
+            <img
+              src="../App2/images/nyc/nyc4.jpg"
+              alt="https://media.timeout.com/images/105639289/630/472/image.jpg"
+              id="nycImg3"
+            />
+          </div>
+        </div>
+
+        <div id="washingtondc">
+          <img src="../App2/images/DC.jpg" alt="" class="dc" id="DC" />
+          <a href="javascript:addDcStyle()"><span>Washington DC</span></a>
+          <p id="dcInfo" hidden="true">
+            Washington, DC, the U.S. capital, is a compact city on the Potomac
+            River, bordering the states of Maryland and Virginia. It’s defined
+            by imposing neoclassical monuments and buildings – including the
+            iconic ones that house the federal government’s 3 branches: the
+            Capitol, White House and Supreme Court. It's also home to iconic
+            museums and performing-arts venues such as the Kennedy Center.
+          </p>
+          <div id="dcImages" hidden="true">
+            <img
+              src="../App2/images/dc/dc1.jpg"
+              alt="https://www.mccarter.com/wp-content/uploads/2019/10/Location-Washingtopn.png"
+              id="dcImg1"
+            />
+            <img
+              src="../App2/images/dc/dc3.jpg"
+              alt="https://www.cga.co.uk/wp-content/uploads/2019/10/Atlantic_Club_Washington_DC.jpg"
+              id="dcImg2"
+            />
+            <img
+              src="../App2/images/dc/dc2.jpeg"
+              alt="https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-USA-WashingtonDC-CapitolBuilding-488869710-f11photo-copy.jpg"
+              id="dcImg3"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="video">
+        <video id="clip1" src="../App2/home2.mp4" muted></video>
+        <h4>hover mouse here</h4>
+      </div>
+      <script src="../libs/node_modules/jquery/dist/jquery.min.js"></script>
+      <script>
+        function addBosStyle() {
+          var bosElem = document.getElementById("BOS");
+          var bosimg = document.getElementById("bosImages");
+          var nyimg = document.getElementById("nycImages");
+          var dcimg = document.getElementById("dcImages");
+          var para = document.getElementById("bosInfo");
+          var nycParam = document.getElementById("nycInfo");
+          var dcParam = document.getElementById("dcInfo");
+          bosElem.style.border = "5px green solid";
+          nyimg.style.display = "none";
+          bosimg.style.display = "flex";
+          dcimg.style.display = "none";
+          nycParam.hidden = true;
+          dcParam.hidden = true;
+          para.hidden = false;
+        }
+        function addNycStyle() {
+          var nycElem = document.getElementById("NYC");
+          var dcimg = document.getElementById("dcImages");
+          var nyimg = document.getElementById("nycImages");
+          var bosimg = document.getElementById("bosImages");
+          nycElem.style.border = "5px blue solid";
+          var para = document.getElementById("nycInfo");
+          var bosPram = document.getElementById("bosInfo");
+          var dcParam = document.getElementById("dcInfo");
+          dcimg.style.display = "none";
+          bosimg.style.display = "none";
+          nyimg.style.display = "flex";
+
+          dcParam.hidden = true;
+          bosPram.hidden = true;
+          para.hidden = false;
+        }
+        function addDcStyle() {
+          var dcElem = document.getElementById("DC");
+          var bosimg = document.getElementById("bosImages");
+          var nyimg = document.getElementById("nycImages");
+          var dcimg = document.getElementById("dcImages");
+          var para = document.getElementById("dcInfo");
+          var bosPram = document.getElementById("bosInfo");
+          var nycParam = document.getElementById("nycInfo");
+          bosimg.style.display = "none";
+          nyimg.style.display = "none";
+          dcimg.style.display = "flex";
+          dcElem.style.border = "5px red solid";
+          bosPram.hidden = true;
+          nycParam.hidden = true;
+          para.hidden = false;
+        }
+        function mouseOver() {
+          var headerElem = document.getElementById("header");
+          headerElem.style.color = "#ff8080";
+        }
+
+        function mouseOut() {
+          var headerElem = document.getElementById("header");
+          headerElem.style.color = "black";
+        }
+        $("video").mouseover(function () {
+          $("video").get(0).play();
+        });
+      </script>
+    </div>
+  </body>
+</html>
