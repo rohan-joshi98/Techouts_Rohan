@@ -26,7 +26,7 @@
 		</div>
 		
 		<div id="books">
-		<% RequestDispatcher rd = request.getRequestDispatcher("displayBooks"); %>>
+		<% RequestDispatcher rd = request.getRequestDispatcher("displayBooks"); %>
 			<ul>
 			<% String b_name =(String) request.getAttribute("b_name");
 						String a_name = (String)request.getAttribute("a_name");
