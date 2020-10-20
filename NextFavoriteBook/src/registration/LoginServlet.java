@@ -36,14 +36,24 @@ public class LoginServlet extends HttpServlet{
 				
 				boolean isVerified =Ldb.verifyUser(hashedPw, uname);
 				if(isVerified) {
+					
+					HttpSession session = req.getSession();
+					session.setAttribute("username", uname);
+					res.sendRedirect("homePage.jsp");
+					
+					
+					
+					
 					System.out.println("Verified User");
 					
 				}else {
+					res.sendRedirect("Login.html");
 					System.out.println("Invalid password");
 				}
 				
 				
 			}else {
+				res.sendRedirect("Login.html");
 				System.out.println("There is no such user, please enter a valid username");
 			}
 			

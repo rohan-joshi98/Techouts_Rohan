@@ -32,6 +32,8 @@ public class RegistrationDB {
 		
 	}
 	
+
+	
 	public int getHashedPassword(String pass) {
 		
 		int hashed = pass.hashCode();

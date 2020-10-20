@@ -25,10 +25,16 @@ public class LoginDB {
 		PreparedStatement st = con.prepareStatement(SQL);
 		st.setString(1, password);
 		ResultSet rs = st.executeQuery();
-		rs.next();
-		int hashed = rs.getInt(1);
-		System.out.println(hashed);
-		return hashed;
+		
+		if(rs.next()) {
+			int hashed = rs.getInt(1);
+			System.out.println(hashed);
+			return hashed;
+		}else {
+			return 0;
+		}
+		
+
 	}
 	
 	
@@ -51,16 +57,17 @@ public class LoginDB {
 		PreparedStatement st = con.prepareStatement(SQL);
 		st.setString(1, uname);
 		try {
+			
 			ResultSet rs = st.executeQuery();
-			System.out.println(rs.toString());
-			if(!rs.wasNull()) {
+
+			if(rs.next()) {
 				return true;
 			}else {
+				System.out.println("No such user");
 				return false;
 			}
 			
 		}catch(Exception e) {
-			System.out.println(e.getMessage());
 			System.out.println("No such user");
 			return false;
 		}
@@ -95,7 +102,7 @@ public class LoginDB {
 		
 		ResultSet isUser = st.executeQuery();
 		System.out.println("The user verification block");
-		if(!isUser.wasNull()){
+		if(isUser.next()){
 			return true;
 		}else {
 			return false;
