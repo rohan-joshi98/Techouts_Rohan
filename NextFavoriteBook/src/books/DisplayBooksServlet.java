@@ -1,6 +1,7 @@
 package books;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -25,16 +26,18 @@ public class DisplayBooksServlet extends HttpServlet{
 		DisplayBookDB Bdb= new DisplayBookDB();
 		
 		try {
-			BooksObj Bobj = Bdb.getBooks();
-			int b_id=Bobj.b_id;
+			ResultSet book = Bdb.getBooks();
+			//book.next();
+			int b_id=book.getInt(1);
+			System.out.println(b_id);
 			String a_name = Bdb.getAuthor(b_id);
 			
-			req.setAttribute("b_id",Bobj.b_id );
-			req.setAttribute("b_name",Bobj.b_name );
-			req.setAttribute("price",Bobj.price );
+
+			req.setAttribute("b_name",book.getString(2));
+			req.setAttribute("price",book.getFloat(3) );
 			req.setAttribute("a_name", a_name);
 			
-			System.out.println(Bobj.b_name);
+			System.out.println(book.getString(2));
 
 			System.out.println(a_name);
 			
@@ -42,7 +45,7 @@ public class DisplayBooksServlet extends HttpServlet{
 			
 			
 			
-			RequestDispatcher rd = req.getRequestDispatcher("homePage.jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("Books.jsp");
 			rd.forward(req, res);
 			
 			res.sendRedirect("homePage.jsp");

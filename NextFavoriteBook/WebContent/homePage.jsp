@@ -18,15 +18,18 @@
 				<% String uname = (String) session.getAttribute("username");
 					out.println(uname);%></li>
 				<li><a href="profile">Profile</a></li>
-				<li><a href="Cart.jsp">Cart</a></li>
+				<li><a href="displayBooks">Books</a></li>
 				<li><a href="Logout.jsp">Logout</a></li>
 				
 				
 			</ul>
 		</div>
 		
-		<div id="books">
-		<% RequestDispatcher rd = request.getRequestDispatcher("displayBooks"); %>
+<%-- 		<div id="books">
+		<% RequestDispatcher rd = request.getRequestDispatcher("/displayBooks");
+		rd.include(request,response);
+		
+		%>
 			<ul>
 			<% String b_name =(String) request.getAttribute("b_name");
 						String a_name = (String)request.getAttribute("a_name");
@@ -34,7 +37,7 @@
 				<li><a><% out.println(b_name+" "+a_name+" "+price);%></a></li>
 			</ul>
 		
-		</div>
+		</div> --%>
 	</div>
 </body>
 </html>

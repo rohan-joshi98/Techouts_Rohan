@@ -92,6 +92,8 @@ alter table bookrecords modify column price float(8,2);
 delete from Users;
 delete from passwords;
 delete from personal_info;
+delete from authors;
+delete from bookrecords;
 
 SELECT * FROM Users;
 SELECT * FROM Passwords;
@@ -105,16 +107,26 @@ insert into zip values(02120, "Boston");
 insert into personal_info values(1,"rohan","Rohan","Joshi","244Winchesterst","apt2",02120,"6179352539");
 
 
-insert into authors values(001,"J.K.","Rowling");
-insert into authors values(002,"George R.","Martin");
-insert into authors values(003,"Harper","Lee");
-insert into authors values(004,"Herman","Hesse");
+insert into authors values(001,"J.K.","Rowling",01);
+insert into authors values(002,"George R.","Martin",02);
+insert into authors values(003,"Harper","Lee",03);
+insert into authors values(004,"Herman","Hesse",04);
 
-insert into bookrecords values(01,"The Harry Potter",40.99,"Its a story of a wizard",001);
-insert into bookrecords values(02,"A Game of Thrones",62.99,"A Story of many kings",002);
-insert into bookrecords values(03,"Kill a Mockingbird",39.99,"A story of a mocking bird",003);
-insert into bookrecords values(04,"Siddhartha",52.99,"Story of great gautam Buddha",004);
+insert into bookrecords values(01,"The Harry Potter",40.99,"Its a story of a wizard");
+insert into bookrecords values(02,"A Game of Thrones",62.99,"A Story of many kings");
+insert into bookrecords values(03,"Kill a Mockingbird",39.99,"A story of a mocking bird");
+insert into bookrecords values(04,"Siddhartha",52.99,"Story of great gautam Buddha");
 
+ALTER TABLE authors ADD COLUMN b_id int;
+ALTER TABLE authors ADD FOREIGN KEY(b_id) REFERENCES bookrecords(b_id);
+
+ALTER TABLE bookrecords Drop foreign key bookrecords_ibfk_1;
+ALTER TABLE bookrecords Drop column a_id;
+ALTER TABLE authors DROP COLUMN b_id;
+
+
+
+SHOW create table bookrecords;
 
 
 
