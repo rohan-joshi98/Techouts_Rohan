@@ -1,6 +1,8 @@
 package database;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import books.BooksObj;
 
 public class DisplayBookDB {
@@ -12,40 +14,49 @@ public class DisplayBookDB {
 	String PASSWORD ="shawrma@2554";
 	
 	
-	public ResultSet getBooks() throws ClassNotFoundException, SQLException {
+	public ArrayList<BooksObj> getBooks() throws ClassNotFoundException, SQLException {
 		Class.forName(DB_DRIVER);
 		Connection con = DriverManager.getConnection(DB_URL,USER,PASSWORD);
 		
-		String SQL = "SELECT * FROM bookrecords LIMIT 1";
+		String SQL = "SELECT * FROM bookrecords";
 		
 		Statement st= con.createStatement();
 		ResultSet rs = st.executeQuery(SQL);
 		//BooksObj Books = null;
-		rs.next();
-		
-		return rs;
+//		while(rs.next()) {
+//			return rs;
+//		}
+//		return null;
+//		
+		ArrayList<BooksObj> Al= new ArrayList<>();
 		
 //		
-//		while(rs.next()) {
-//			int b_id =rs.getInt(1);
-//			String b_name = rs.getString(2);
-//			float price = rs.getFloat(3);
-//			String intro= rs.getString(4);
-//			int a_id=rs.getInt(5);
-//			
-//			System.out.println(b_id);
-//			
-//			Books=new BooksObj(b_id,b_name,price,intro,a_id);
-//			
-//			
-//			
-//		}
+		while(rs.next()) {
+			int b_id =rs.getInt(1);
+			String b_name = rs.getString(2);
+			float price = rs.getFloat(3);
+			String intro= rs.getString(4);
+			
+			
+			
+			
+			System.out.println(b_id);
+			System.out.println(b_name);
+			System.out.println(price);
+			System.out.println(intro);
+			
+			//Books=new BooksObj(b_id,b_name,price,intro);
+			
+			Al.add(new BooksObj(b_id,b_name,price,intro));
+			
+			
+		}
 	
 		
+		return Al;
 		
 		
 		
-		//return Books;
 		
 	}
 	
